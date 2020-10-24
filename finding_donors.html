@@ -15044,7 +15044,66 @@ Naive Predictor: [Accuracy score: 0.2478, F-score: 0.2917]
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Answer: </strong></p>
+<p>We will use the three following supervised learning models:</p>
+<ol>
+<li><strong>AdaBoostClassifier</strong></li>
+<li><strong>BaggingClassifier</strong></li>
+<li><strong>GradientBoostingClassifier</strong></li>
+</ol>
+<p>We have chosen the above models as they are a <strong>classification</strong> algorithms, thus, the models will help us identify possible donators by predicting whether an individual have income of $50K yearly.</p>
+<p>Those models can be applied for any classification predictions, like checking that a person is healthy or sick for example.</p>
+<h4 id="AdaBoostClassifier">AdaBoostClassifier<a class="anchor-link" href="#AdaBoostClassifier">&#182;</a></h4><h5 id="Real-World-Application:">Real World Application:<a class="anchor-link" href="#Real-World-Application:">&#182;</a></h5><ul>
+<li>Classifying the types of topics customers are talking about</li>
+</ul>
+<h5 id="Pros:">Pros:<a class="anchor-link" href="#Pros:">&#182;</a></h5><ul>
+<li>AdaBoost is easy to implement</li>
+<li>Iteratively corrects the mistakes of the weak classifier and improves accuracy by combining weak learners</li>
+<li>You can use many base classifiers with AdaBoost</li>
+</ul>
+<h5 id="Cons:">Cons:<a class="anchor-link" href="#Cons:">&#182;</a></h5><ul>
+<li>AdaBoost is sensitive to noise data</li>
+<li>It is highly affected by outliers because it tries to fit each point perfectly</li>
+<li>AdaBoost is slow compared to other algorithms</li>
+</ul>
+<h5 id="Why-did-we-choose-it-for-this-problem?">Why did we choose it for this problem?<a class="anchor-link" href="#Why-did-we-choose-it-for-this-problem?">&#182;</a></h5><ul>
+<li>It is a classification algorithm (to classify whether a person having &gt;$50K income)</li>
+<li>It has a high accuracy as it will fit the given training data</li>
+</ul>
+<h4 id="BaggingClassifier">BaggingClassifier<a class="anchor-link" href="#BaggingClassifier">&#182;</a></h4><h5 id="Real-World-Application:">Real World Application:<a class="anchor-link" href="#Real-World-Application:">&#182;</a></h5><ul>
+<li>Medical data predictions</li>
+<li>Predict whether the customer will repay their credit within 90 days</li>
+</ul>
+<h5 id="Pros:">Pros:<a class="anchor-link" href="#Pros:">&#182;</a></h5><ul>
+<li>Reduce the variance of a base estimator</li>
+<li>Very simple way to improve with respect to a single model</li>
+<li>It provides a way to reduce overfitting</li>
+</ul>
+<h5 id="Cons:">Cons:<a class="anchor-link" href="#Cons:">&#182;</a></h5><ul>
+<li>Giving its final prediction based on the mean predictions from the subset trees</li>
+</ul>
+<h5 id="Why-did-we-choose-it-for-this-problem?">Why did we choose it for this problem?<a class="anchor-link" href="#Why-did-we-choose-it-for-this-problem?">&#182;</a></h5><ul>
+<li>It is a classification algorithm (to classify whether a person having &gt;$50K income)</li>
+<li>To not overfit the training data</li>
+</ul>
+<h4 id="GradientBoostingClassifier">GradientBoostingClassifier<a class="anchor-link" href="#GradientBoostingClassifier">&#182;</a></h4><h5 id="Real-World-Application:">Real World Application:<a class="anchor-link" href="#Real-World-Application:">&#182;</a></h5><ul>
+<li>Anomaly detection</li>
+<li>Credit card transactions</li>
+</ul>
+<h5 id="Pros:">Pros:<a class="anchor-link" href="#Pros:">&#182;</a></h5><ul>
+<li>High-performing.</li>
+<li>Supports different loss function.</li>
+<li>Works well with interactions.</li>
+</ul>
+<h5 id="Cons:">Cons:<a class="anchor-link" href="#Cons:">&#182;</a></h5><ul>
+<li>Prone to over-fitting.</li>
+<li>Requires careful tuning of different hyper-parameters.</li>
+<li>Training generally takes a long time because of the fact that trees are built sequentially.</li>
+</ul>
+<h5 id="Why-did-we-choose-it-for-this-problem?">Why did we choose it for this problem?<a class="anchor-link" href="#Why-did-we-choose-it-for-this-problem?">&#182;</a></h5><ul>
+<li>It is a classification algorithm (to classify whether a person having &gt;$50K income)</li>
+<li>Lots of flexibility</li>
+<li>Provides high predictive accuracy</li>
+</ul>
 
 </div>
 </div>
@@ -15603,7 +15662,7 @@ Final F-score on the testing data: 0.7465
 <ul>
 <li>If you were not close, why do you think these features are more relevant?</li>
 </ul>
-<p>N/A</p>
+<p>Some of the features I did not mention in the above question as I thought it isn't as important as the top 5 I already mentioned. Those features are (<strong>Capital-Loss</strong> and <strong>Education-Num</strong>), after giving it a second thought, I think that it does affect the chances of having an income of more than ($50K) as the capital-loss will give us a lower chance of the individual donating to Charity-ML. Also, education-num will increase the chance of having a higher pay which leads to a higher chance of donating to Charity-ML.</p>
 
 </div>
 </div>
@@ -15711,6 +15770,12 @@ F-score on testing data: 0.7240
 <p><a href="https://thereputationalgorithm.com/2017/01/21/top-predictive-algorithms-infographic/">https://thereputationalgorithm.com/2017/01/21/top-predictive-algorithms-infographic/</a></p>
 <p><a href="https://towardsdatascience.com/decision-tree-ensembles-bagging-and-boosting-266a8ba60fd9">https://towardsdatascience.com/decision-tree-ensembles-bagging-and-boosting-266a8ba60fd9</a></p>
 <p><a href="https://scikit-learn.org/0.17/modules/generated/sklearn.grid_search.GridSearchCV.html">https://scikit-learn.org/0.17/modules/generated/sklearn.grid_search.GridSearchCV.html</a></p>
+<p><a href="https://hackernoon.com/under-the-hood-of-adaboost-8eb499d78eab">https://hackernoon.com/under-the-hood-of-adaboost-8eb499d78eab</a></p>
+<p><a href="https://medium.com/python-in-plain-english/adaboost-classifier-in-python-8d34a9f20459">https://medium.com/python-in-plain-english/adaboost-classifier-in-python-8d34a9f20459</a></p>
+<p><a href="https://www.kaggle.com/kashnitsky/a5-demo-logit-and-rf-for-credit-scoring">https://www.kaggle.com/kashnitsky/a5-demo-logit-and-rf-for-credit-scoring</a></p>
+<p><a href="https://blog.paperspace.com/bagging-ensemble-methods/">https://blog.paperspace.com/bagging-ensemble-methods/</a></p>
+<p><a href="https://medium.com/@aravanshad/gradient-boosting-versus-random-forest-cfa3fa8f0d80">https://medium.com/@aravanshad/gradient-boosting-versus-random-forest-cfa3fa8f0d80</a></p>
+<p><a href="https://blog.paperspace.com/gradient-boosting-for-classification/">https://blog.paperspace.com/gradient-boosting-for-classification/</a></p>
 
 </div>
 </div>
